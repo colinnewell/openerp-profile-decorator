@@ -21,6 +21,7 @@ def profileit(log):
             retval = prof.runcall(func, *args, **kwargs)
             fname = valid_filename()
             prof.dump_stats(fname)
+            # make sure you turn on --log-level=debug
             log.debug("Profile stats saved to %s" % fname)
             return retval
         return wrapper
