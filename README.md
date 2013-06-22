@@ -39,22 +39,22 @@ modification to osv.py like this for example,
 Once the decorator is in place and you are running openerp look
 for the debug messages in the log,
 
-    2013-06-22 13:00:27,906 1135 DEBUG ? openerp.netsvc.rpc.response: object.execute_kw time:0.016s [29]
-    2013-06-22 13:00:27,907 1135 DEBUG ? openerp.netsvc.rpc.request: object.execute_kw('minimal',
-    2013-06-22 13:00:27,907 1135 DEBUG ? openerp.netsvc.rpc.request:                   1,
-    2013-06-22 13:00:27,907 1135 DEBUG ? openerp.netsvc.rpc.request:                   '*',
-    2013-06-22 13:00:27,907 1135 DEBUG ? openerp.netsvc.rpc.request:                   'ir.attachment',
-    2013-06-22 13:00:27,907 1135 DEBUG ? openerp.netsvc.rpc.request:                   'read',
-    2013-06-22 13:00:27,907 1135 DEBUG ? openerp.netsvc.rpc.request:                   ([29],
-    2013-06-22 13:00:27,908 1135 DEBUG ? openerp.netsvc.rpc.request:                    ['name', 'url', 'type'],
-    2013-06-22 13:00:27,908 1135 DEBUG ? openerp.netsvc.rpc.request:                    {'department_id': False,
-    2013-06-22 13:00:27,908 1135 DEBUG ? openerp.netsvc.rpc.request:                     'lang': 'en_GB',
-    2013-06-22 13:00:27,908 1135 DEBUG ? openerp.netsvc.rpc.request:                     'section_id': False,
-    2013-06-22 13:00:27,908 1135 DEBUG ? openerp.netsvc.rpc.request:                     'tz': False,
-    2013-06-22 13:00:27,908 1135 DEBUG ? openerp.netsvc.rpc.request:                     'uid': 1}),
-    2013-06-22 13:00:27,908 1135 DEBUG ? openerp.netsvc.rpc.request:                   {})
-    2013-06-22 13:00:27,910 1135 DEBUG ? openerp.osv.osv: <strong>Profile stats saved to /tmp/openerp-profile-1371906027.910166-Thread-16.profile</strong>
-    2013-06-22 13:00:27,911 1135 DEBUG ? openerp.netsvc.rpc.response: object.execute_kw time:0.004s [{'id': 29, 'name': u'SO007.pdf', 'type': u'binary', 'url': False}]
+    openerp.netsvc.rpc.response: object.execute_kw time:0.016s [29]
+    openerp.netsvc.rpc.request: object.execute_kw('minimal',
+    openerp.netsvc.rpc.request:                   1,
+    openerp.netsvc.rpc.request:                   '*',
+    openerp.netsvc.rpc.request:                   'ir.attachment',
+    openerp.netsvc.rpc.request:                   'read',
+    openerp.netsvc.rpc.request:                   ([29],
+    openerp.netsvc.rpc.request:                    ['name', 'url', 'type'],
+    openerp.netsvc.rpc.request:                    {'department_id': False,
+    openerp.netsvc.rpc.request:                     'lang': 'en_GB',
+    openerp.netsvc.rpc.request:                     'section_id': False,
+    openerp.netsvc.rpc.request:                     'tz': False,
+    openerp.netsvc.rpc.request:                     'uid': 1}),
+    openerp.netsvc.rpc.request:                   {})
+    openerp.osv.osv: Profile stats saved to /tmp/openerp-profile-1371906027.910166-Thread-16.profile
+    openerp.netsvc.rpc.response: object.execute_kw time:0.004s [{'id': 29, 'name': u'SO007.pdf', 'type': u'binary', 'url': False}]
 
 I personally like to examine the profiles using [kcachegrind] [2] by 
 using [pyprof2calltree] [3] to convert the files to a format it understands.
