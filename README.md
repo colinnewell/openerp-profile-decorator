@@ -1,4 +1,4 @@
-openerpprofiledecorator
+openerp-profile-decorator
 ================================
 
 A quick profiling decorator designed to work with OpenERP
