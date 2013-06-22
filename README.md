@@ -5,10 +5,10 @@ A quick profiling decorator designed to work with OpenERP
 and it's logging.
 
 This is for use by developers to generate cProfile profiling
-data.  It writes the profile files to /tmp with filenames 
+data.  It writes a profile file per call into /tmp. The filenames 
 starting openerp-profile with the extension .profile.  It also 
-makes use of the OpenERP log to log when it saves the profile to
-help you tie up which action corresponds to which profile.
+makes use of the OpenERP log to log when it saves the profile 
+to help you tie up which action corresponds to which profile.
 
 To make the most of the logging it is suggested you run with,
 
@@ -39,7 +39,6 @@ modification to osv.py like this for example,
 Once the decorator is in place and you are running openerp look
 for the debug messages in the log,
 
-    openerp.netsvc.rpc.response: object.execute_kw time:0.016s [29]
     openerp.netsvc.rpc.request: object.execute_kw('minimal',
     openerp.netsvc.rpc.request:                   1,
     openerp.netsvc.rpc.request:                   '*',
