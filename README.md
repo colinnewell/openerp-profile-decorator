@@ -62,6 +62,12 @@ using [pyprof2calltree] [3] to convert the files to a format it understands.
 
 --------------------------------
 
+Note:  This code has been used with OpenERP 6.1.  I imagine 
+it should pretty much work for 7.0 too but I haven't tried it 
+yet.
+
+--------------------------------
+
 This decorator is based on an [answer] [1] on stackoverflow.
 
 [1]: http://stackoverflow.com/questions/5375624/a-decorator-that-profiles-a-method-call-and-logs-the-profiling-result "Stackoverflow answer"
