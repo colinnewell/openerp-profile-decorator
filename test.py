@@ -1,3 +1,4 @@
+from stackdecorator import debugstacktrace
 from openerpprofiledecorator import profileit
 
 class Log(object):
@@ -9,6 +10,7 @@ logger = Log()
 
 class Test(object):
 
+    @debugstacktrace(logger)
     @profileit(logger)
     def mymethod(self, name):
         print "Hello %s" % name
