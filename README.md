@@ -72,7 +72,7 @@ keyword argument timer.  For example to use wall time instead of CPU time you mi
     @profileit(_logger, timer=time.time)
 
 Your value of timer, if not None or omitted, is passed to the cProfile.Profile()
-constructor as keyword argument timer.  If you omit it, the keywrod argument is not passed
+constructor as keyword argument timer.  If you omit it, the keyword argument is not passed
 through to Profile().
 
 For more information on timers, see the [Python profiling documentation] [4]
