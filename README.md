@@ -60,6 +60,23 @@ using [pyprof2calltree] [3] to convert the files to a format it understands.
 
     pyprof2calltree -i /tmp/openerp-profile-1371906027.910166-Thread-16.profile -k
 
+
+--------------------------------
+
+You can specify an alternative timer function to the decorator, using the optional
+keyword argument timer.  For example to use wall time instead of CPU time you might do:
+
+    import time
+
+    # ...
+    @profileit(_logger, timer=time.time)
+
+Your value of timer, if not None or omitted, is passed to the cProfile.Profile()
+constructor as keyword argument timer.  If you omit it, the keyword argument is not passed
+through to Profile().
+
+For more information on timers, see the [Python profiling documentation] [4]
+
 --------------------------------
 
 Note:  This code has been used with OpenERP 6.1.  I imagine 
@@ -73,3 +90,4 @@ This decorator is based on an [answer] [1] on stackoverflow.
 [1]: http://stackoverflow.com/questions/5375624/a-decorator-that-profiles-a-method-call-and-logs-the-profiling-result "Stackoverflow answer"
 [2]: http://kcachegrind.sourceforge.net/html/Home.html "KCachegrind"
 [3]: https://pypi.python.org/pypi/pyprof2calltree/ "pyprof2calltree"
+[4]: https://docs.python.org/2/library/profile.html "26.4. The Python Profilers"

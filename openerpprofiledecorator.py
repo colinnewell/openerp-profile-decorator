@@ -5,7 +5,7 @@ import threading
 import time
 import os
 
-def profileit(log):
+def profileit(log, timer=None):
     """
     A quick profiling decorator designed to work with OpenERP
     and it's logging.
@@ -53,7 +53,12 @@ def profileit(log):
 
     def inner(func):
         def wrapper(*args, **kwargs):
-            prof = cProfile.Profile()
+            prof_kws = {}
+            if timer is not None:
+                # Note passing None to timer results in TypeError "NoneType object is not callable" warnings
+                # hence use of prof_kws dictionary
+                prof_kws['timer'] = timer
+            prof = cProfile.Profile(**prof_kws)
             retval = prof.runcall(func, *args, **kwargs)
             fname = valid_filename()
             prof.dump_stats(fname)
