@@ -77,11 +77,15 @@ through to Profile().
 
 For more information on timers, see the [Python profiling documentation] [4]
 
+Using wall time is useful when you suspect that the bottleneck is in calls that block
+talking to external resources.  Database or networking calls for example, where the
+code is simply waiting for an answer and not consuming CPU cycles within the Python
+code.
+
 --------------------------------
 
-Note:  This code has been used with OpenERP 6.1.  I imagine 
-it should pretty much work for 7.0 too but I haven't tried it 
-yet.
+Note:  This code has been used with OpenERP 6.1 and Odoo 8.0.  If you find an
+incompatibility with a version please report it or provide a pull request.
 
 --------------------------------
 
